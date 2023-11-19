@@ -1,15 +1,15 @@
 <?php
+require __DIR__ . '/vendor/autoload.php';
 
-if (($open = fopen("app.csv", "r")) !== false) {
-	while (($data = fgetcsv($open, 1000, ",")) !== false) {
-		$array[] = $data;
-	}
+use League\Csv\Reader;
 
-	fclose($open);
+$reader = Reader::createFromPath('app.csv', 'r');
+$reader->setHeaderOffset(0);
+$records = $reader->getRecords();
+echo '<pre>';
+
+
+foreach ($records as $offset => $record) {
+	var_dump($record);
 }
-echo "<pre>";
-
-// To display array data
-var_dump($array);
-echo "</pre>";
-?>
+echo '</pre>';
