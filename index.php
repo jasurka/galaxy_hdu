@@ -1,4 +1,6 @@
 <?php
 require __DIR__ . '/vendor/autoload.php';
-require 'route.php';
+require 'class-GalaxyApps.php';
+
+new GalaxyApps();
 ?>
