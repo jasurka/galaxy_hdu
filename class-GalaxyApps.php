@@ -7,11 +7,9 @@ class GalaxyApps {
 
 	public function __construct() {
 		$this->apps = self::get_apps_array();
-		echo '<pre>';
-		var_dump($this->apps);
-		echo '</pre>';
 	}
 
+	// Get all apps in arrays
 	public static function get_apps_array() {
 		$apps = array();
 		$reader = Reader::createFromPath('app.csv', 'r');
@@ -24,6 +22,7 @@ class GalaxyApps {
 		return $apps;
 	}
 
+	// Get all apps in JSON
 	public static function get_apps() {
 		$apps = array();
 		$records = self::get_apps_array();
