@@ -21,9 +21,6 @@ $galaxy_apps = new GalaxyApps();
 		ratings.push(app.Rating);
 	});
 
-	categories = removeDuplicates(categories)
-	ratings = removeDuplicates(ratings)
-
 	new Chart(
 		ctx,
 		{
@@ -37,13 +34,4 @@ $galaxy_apps = new GalaxyApps();
 			},
 	});
 
-	function removeDuplicates( data ) {
-		let unique = [];
-		data.forEach( function( element ) {
-			if( !unique.includes(element) ) {
-				unique.push(element)
-			}
-		});
-		return unique;
-	}
 </script>
