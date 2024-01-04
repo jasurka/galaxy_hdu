@@ -135,7 +135,7 @@ class GalaxyApps {
 			$return_array[ $record['App'] ] = $record['Size'];
 		}
 		arsort( $return_array );
-		return array_slice( $return_array, 0, $number );
+		return array_slice( array_unique( $return_array ), 0, $number );
 	}
 
 	// Use for chart
@@ -148,7 +148,7 @@ class GalaxyApps {
 			$return_array[ $record['App'] ] = $record['Price'];
 		}
 		arsort( $return_array );
-		return array_slice( $return_array, 0, $number );
+		return array_slice( array_unique( $return_array ), 0, $number );
 	}
 
 	// Use for chart
@@ -161,7 +161,7 @@ class GalaxyApps {
 			$return_array[ $record['App'] ] = $record['Rating'];
 		}
 		arsort( $return_array );
-		return array_slice( $return_array, 0, $number );
+		return array_slice( array_unique( $return_array ), 0, $number );
 	}
 
 	// Use for chart
